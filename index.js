@@ -11,11 +11,11 @@ app.use(bodyParser.json());
 app.use(cors())
 
 const db = new Pool({
-    host: '127.0.0.1',
-    user: 'todolist',
-    password: 'test',
-    database: 'todolist',
-    port: 5432
+    host: 'postgresql-perpendicular-47895',
+    // user: 'todolist',
+    // password: 'test',
+    // database: 'todolist',
+    // port: 5432
 
 });
 
