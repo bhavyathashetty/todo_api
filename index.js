@@ -13,10 +13,10 @@ app.use(cors())
 const db = new Pool({
     // host: 'https://todo-api-bh.herokuapp.com/',
     // database: 'postgresql-perpendicular-47895',
-    host:'localhost',
-    database:'todolist',
-    password:'test',
-    user:'todolist',
+    host:'ec2-54-173-2-216.compute-1.amazonaws.com',
+    database:'dfouh8r5i0ie04',
+    password:'4eea83a81c7969276a91c1c0a36c9a4904b5ce4da0842deb1fbe9255cb4011f0',
+    user:'cpihfrkykcpseh',
     port:5432
 });
 
