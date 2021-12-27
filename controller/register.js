@@ -4,7 +4,6 @@ const getUsers = (req, res, db) => {
   db.query(`select * from users`)
     .then(user => {
       res.json(user.rows)
-      console.log(user)
     })
     .catch(err => res.status(400).json('unable to get user'))
 
@@ -61,7 +60,8 @@ const handleAddTodo = (req, res, db) => {
 
 
 const handleGetTodo=(req,res,db)=>{
-  db.query(`SELECT * FROM todos  ORDER BY id ASC`)
+  const {userid} = req.params;
+  db.query(`SELECT id,todo FROM todos where todouserid='${userid}'ORDER BY id ASC`)
   .then(user => {
   res.json(user.rows)
   })

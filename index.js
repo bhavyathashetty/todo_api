@@ -20,11 +20,6 @@ const db = new Pool({
     port:5432
 });
 
-// db.query('SELECT NOW()',(err,res)=>{
-//     console.log(err,res)
-//     db.end()
-// })
-
 
 app.get('/users', (req, res) => { register.getUsers(req, res, db) })
 
@@ -33,7 +28,7 @@ app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcry
 
 app.post('/signin', (req, res) => { register.handleSignin(req, res, db, bcrypt) })
 
-app.get('/gettodos', (req, res) => {
+app.get('/gettodos/:userid', (req, res) => {
     register.handleGetTodo(req, res, db)
 })
 
