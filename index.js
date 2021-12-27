@@ -15,11 +15,13 @@ const db = new Pool({
     // database:'dfouh8r5i0ie04',
     // user:'cpihfrkykcpseh',
     // port:5432
-    host:'localhost',
-    database:'todolist',
-    user:'todolist',
-    port:5432,
-    password:'test'
+    // host:'localhost',
+    // database:'todolist',
+    // user:'todolist',
+    // port:5432,
+    // password:'test',
+    ssl:'require'
+    
     
 });
 
