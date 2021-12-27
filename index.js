@@ -4,30 +4,23 @@ const register = require('./controller/register')
 const bodyParser = require('body-parser')
 const bcrypt = require('bcrypt');
 const Pool = require('pg').Pool;
-const knex = require('knex')
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.DATABASE_URL || 3000;
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json());
 app.use(cors())
 
-const db = knex({
-    // host:'ec2-54-173-2-216.compute-1.amazonaws.com',
-    // database:'dfouh8r5i0ie04',
-    // user:'cpihfrkykcpseh',
-    // port:5432
+const db = new Pool({
+    host:'ec2-54-173-2-216.compute-1.amazonaws.com',
+    database:'dfouh8r5i0ie04',
+    user:'cpihfrkykcpseh',
+    port:5432
     // host:'localhost',
     // database:'todolist',
     // user:'todolist',
     // port:5432,
     // password:'test'
-    client:'pg',
-    connection:{
-        connectionString:process.env.DATABASE_URL,
-        ssl:{
-            rejectUnauthorized:false
-        }
-    }
+    
 });
 
 
