@@ -11,10 +11,13 @@ app.use(bodyParser.json());
 app.use(cors())
 
 const db = new Pool({
-    host: 'https://todo-api-bh.herokuapp.com/',
-    database: 'postgresql-perpendicular-47895',
-
-
+    // host: 'https://todo-api-bh.herokuapp.com/',
+    // database: 'postgresql-perpendicular-47895',
+    host:'localhost',
+    database:'todolist',
+    password:'test',
+    user:'todolist',
+    port:5432
 });
 
 // db.query('SELECT NOW()',(err,res)=>{
