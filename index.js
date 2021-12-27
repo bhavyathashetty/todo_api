@@ -10,6 +10,10 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json());
 app.use(cors())
 
+let connectionString ={
+    connectionString:process.env.DATABASE_URL,
+    ssl:true
+}
 const db = new Pool({
     // host:'ec2-54-173-2-216.compute-1.amazonaws.com',
     // database:'dfouh8r5i0ie04',
@@ -19,8 +23,8 @@ const db = new Pool({
     // database:'todolist',
     // user:'todolist',
     // port:5432,
-    // password:'test',
-    ssl:'require'
+    // password:'test'
+    connectionString
     
     
 });
