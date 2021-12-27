@@ -4,15 +4,29 @@ const register = require('./controller/register')
 const bodyParser = require('body-parser')
 const bcrypt = require('bcrypt');
 const Pool = require('pg').Pool;
-const PORT = process.env.PORT || 3000;
+
+const PORT = process.env.NODE_ENV || 3000;
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json());
 app.use(cors())
 
 let connectionString ={
-    connectionString:process.env.DATABASE_URL,
-    ssl:true
+    user:'todolist',
+    database:'todolist',
+    host:'localhost',
+    password:'test',
+    port:5432
+}
+
+if(PORT===3000){
+    connectionString.database='todolist'
+}
+else{
+    connectionString={
+        connectionString:process.env.DATABASE_URL,
+        ssl:true
+    }
 }
 const db = new Pool(
     // host:'ec2-54-173-2-216.compute-1.amazonaws.com',
