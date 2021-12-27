@@ -14,7 +14,7 @@ let connectionString ={
     connectionString:process.env.DATABASE_URL,
     ssl:true
 }
-const db = new Pool({
+const db = new Pool(
     // host:'ec2-54-173-2-216.compute-1.amazonaws.com',
     // database:'dfouh8r5i0ie04',
     // user:'cpihfrkykcpseh',
@@ -27,7 +27,7 @@ const db = new Pool({
     connectionString
     
     
-});
+);
 
 
 app.get('/users', (req, res) => { register.getUsers(req, res, db) })
