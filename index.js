@@ -22,12 +22,12 @@ let connectionString ={
 if(PORT===3000){
     connectionString.database='todolist'
 }
-else{
-    connectionString={
-        connectionString:process.env.DATABASE_URL,
-        ssl:true
-    }
-}
+// else{
+//     connectionString={
+//         connectionString:process.env.DATABASE_URL,
+//         ssl:true
+//     }
+// }
 const db = new Pool(
     // host:'ec2-54-173-2-216.compute-1.amazonaws.com',
     // database:'dfouh8r5i0ie04',
@@ -42,6 +42,8 @@ const db = new Pool(
     
     
 );
+
+
 
 
 app.get('/users', (req, res) => { register.getUsers(req, res, db) })
