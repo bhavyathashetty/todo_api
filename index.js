@@ -17,7 +17,9 @@ connectionString = {
     database:'dfouh8r5i0ie04',
     user:'cpihfrkykcpseh',
     port:5432,
-    password:'4eea83a81c7969276a91c1c0a36c9a4904b5ce4da0842deb1fbe9255cb4011f0'  
+    password:'4eea83a81c7969276a91c1c0a36c9a4904b5ce4da0842deb1fbe9255cb4011f0' ,
+    URI:`postgres://cpihfrkykcpseh:4eea83a81c7969276a91c1c0a36c9a4904b5ce4da0842deb1fbe9255cb4011f0@ec2-54-173-2-216.compute-1.amazonaws.com:5432/dfouh8r5i0ie04
+    ` 
 }
 
 const db = new Pool(
