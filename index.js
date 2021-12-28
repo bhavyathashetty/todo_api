@@ -13,8 +13,12 @@ app.use(cors())
 
 
 connectionString = {
-    connectionString: process.env.DATABASE_URL,
-    ssl: true
+     host:'ec2-54-173-2-216.compute-1.amazonaws.com',
+    database:'dfouh8r5i0ie04',
+    user:'cpihfrkykcpseh',
+    port:5432,
+    password:'4eea83a81c7969276a91c1c0a36c9a4904b5ce4da0842deb1fbe9255cb4011f0'
+    
 }
 
 const db = new Pool(
