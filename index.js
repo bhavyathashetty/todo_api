@@ -13,7 +13,7 @@ app.use(cors())
 
 
 connectionString = {
-    connectionString: process.env.DATABASE_URL,
+    connectionString: DATABASE_URL,
     ssl: true
 }
 
